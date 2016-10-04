@@ -18,7 +18,7 @@ canvas.height = height;
 //Variables for game
 var platforms = [],
 	image = document.getElementById("sprite"),
-	player, platformCount = 4,
+	player, platformCount = 11,
 	position = 0,
 	gravity = 0.2,
 	animloop,
@@ -87,11 +87,11 @@ var Player = function() {
 	};
 
 	this.jump = function() {
-		this.vy = -10;
+		this.vy = -8;
 	};
 
 	this.jumpHigh = function() {
-		this.vy = -2;
+		this.vy = -16;
 	};
 
 };
@@ -101,8 +101,8 @@ player = new Player();
 //Platform class
 
 function Platform() {
-	this.width = 50;
-	this.height = 8;
+	this.width = 70;
+	this.height = 17;
 
 	this.x = Math.random() * (width - this.width);
 	this.y = position;
@@ -166,8 +166,8 @@ for (var i = 0; i < platformCount; i++) {
 
 //Broken platform object
 var Platform_broken_substitute = function() {
-	this.height = 1000;
-	this.width = 1000;
+	this.height = 30;
+	this.width = 70;
 
 	this.x = 0;
 	this.y = 0;
@@ -195,8 +195,8 @@ var spring = function() {
 	this.x = 0;
 	this.y = 0;
 
-	this.width = 1;
-	this.height = 3;
+	this.width = 26;
+	this.height = 30;
 
 	//Sprite clipping
 	this.cx = 0;
@@ -220,7 +220,7 @@ var Spring = new spring();
 
 function init() {
 	//Variables for the game
-	var	dir = "",
+	var	dir = "left",
 		jumpCount = 0;
 	
 	firstRun = false;
@@ -292,10 +292,10 @@ function init() {
 		}
 
 		// Speed limits!
-		if(player.vx > 10)
-			player.vx = 100;
-		else if(player.vx < -20)
-			player.vx = -100;
+		if(player.vx > 8)
+			player.vx = 8;
+		else if(player.vx < -8)
+			player.vx = -8;
 
 		//console.log(player.vx);
 		
@@ -306,7 +306,33 @@ function init() {
 		if (base.y > height && (player.y + player.height) > height && player.isDead != "lol") player.isDead = true;
 
 		//Make the player move through walls
-		if (player.
+		if (player.x > width) player.x = 0 - player.width;
+		else if (player.x < 0 - player.width) player.x = width;
+
+		//Movement of player affected by gravity
+		if (player.y >= (height / 2) - (player.height / 2)) {
+			player.y += player.vy;
+			player.vy += gravity;
+		}
+
+		//When the player reaches half height, move the platforms to create the illusion of scrolling and recreate the platforms that are out of viewport...
+		else {
+			platforms.forEach(function(p, i) {
+
+				if (player.vy < 0) {
+					p.y -= player.vy;
+				}
+
+				if (p.y > height) {
+					platforms[i] = new Platform();
+					platforms[i].y = p.y - height;
+				}
+
+			});
+
+			base.y -= player.vy;
+			player.vy += gravity;
+
 			if (player.vy >= 0) {
 				player.y += player.vy;
 				player.vy += gravity;
@@ -414,7 +440,7 @@ function init() {
 		});
 
 		if(player.y > height/2 && flag === 0) {
-			player.y -= 100;
+			player.y -= 8;
 			player.vy = 0;
 		} 
 		else if(player.y < height / 2) flag = 1;
