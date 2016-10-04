@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///Users/bsd-01/Downloads/codepen_YGABAB/index.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>A Pen by  Raymond</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="./PP jump hard by Raymond_files/style.css">
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    
+
+	<title>The JJ Jump</title>
+
+
+	<div class="container">
+		<canvas id="canvas" width="422" height="552">
+			Aww, your browser doesn't support HTML5!
+		</canvas>
+
+		<div id="mainMenu" style="z-index: -1;">
+			<h2>The JJ Jump</h2>
+
+			<p class="info">
+				use
+				<span class="key left">←</span>
+				<span class="key right">→</span>
+				to move and space to (re) start...
+			</p>
+			<a class="button" href="javascript:init()">Play</a>
+		</div>
+		
+		<div id="gameOverMenu" style="z-index: 1; visibility: visible;">
+			<h1>game lost</h1>
+			<h3 id="go_score">You scored 94 points!</h3>
+
+			<a class="button" href="javascript:reset()">Restart</a>
+			<a id="tweetBtn" target="_blank" class="button tweet" href="http://twitter.com/share?url=http://is.gd/PnFFzu&amp;text=I%20just%20scored%2094%20points%20in%20the%20HTML5%20Doodle%20Jump%20game!&amp;count=horiztonal&amp;via=cssdeck&amp;related=solitarydesigns">Tweet score</a>
+
+			<a id="fbBtn" target="_blank" class="button fb" href="http://facebook.com/sharer.php?s=100&amp;p[url]=http://cssdeck.com/labs/html5-doodle-jump/8&amp;p[title]=I%20just%20scored%2094%20points%20in%20the%20HTML5%20Doodle%20Jump%20game!&amp;p[summary]=Can%20you%20beat%20me%20in%20this%20awesome%20recreation%20of%20Doodle%20Jump%20created%20in%20HTML5?">Post on FB</a>
+		</div>
+		
+		<!-- Preloading image ;) -->
+		<img id="sprite" src="./PP jump hard by Raymond_files/ouuv02.png">
+
+		<div id="scoreBoard" style="z-index: -1;">
+			<p id="score">94</p>
+		</div>
+
+	</div>
+
+
+    
+        <script src="./PP jump hard by Raymond_files/index.js"></script>
+
+    
+    
+  
+
+</body></html>
