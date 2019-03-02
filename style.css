@@ -1,0 +1,123 @@
+.textout 
+{
+  color : red;
+  font-size : 25px;
+
+}
+.title
+{
+	font-size : 30px;
+}
+.Logo
+{
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.bordered {
+    width: 700px;
+    height: 80px;
+    padding: 20px;
+    border: 10px solid black;
+  }
+
+.timer {
+    font-size: 30px;
+  }
+
+.border {
+	width: 2px;
+    height: 2px;
+    padding: 20px;
+    border: 5px solid black;
+    margin-top: 10px;
+}
+
+.button1 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #FF0000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 500px;
+}
+
+.button1:active {
+  background-color: #8B0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button2 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0000FF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 500px;
+}
+
+.button2:active {
+  background-color: #00344D;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button3 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #8B008B;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 500px;
+}
+
+.button3:active {
+  background-color: #1C004D;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button4 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #FFFF00;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 500px;
+}
+
+.button4:active {
+  background-color: #666600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1 {
+~ .option-button1 {
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+  }
+
+ .winning {
+ 	background-size: cover;
+ }
